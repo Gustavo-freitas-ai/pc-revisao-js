@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Manipulação de Eventos</h1>
+    <!-- Evento adicionado diretamente no html -->
+    <button onclick="alert('Você clicou')">click aqui</button>
+    <button id="btn">click é o js roda</button>
+
+    <form action="" id="form">
+        <button type="submit">submit</button>
+    </form>
+
+    <script>
+        let btn = document.getElementById('btn')
+        btn.onclick = () => {
+            let num = prompt("Digite um número")
+            alert(num)
+        }
+
+        document.getElementById('form').addEventListener("submit", (event) => {
+            event.preventDefault()
+            console.log("Teste");
+        })
+
+
+    </script>
+
+</body>
+
+</html>
