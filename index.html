@@ -10,27 +10,27 @@
 <body>
 
     <h1>Manipulação de Eventos</h1>
-    <!-- Evento adicionado diretamente no html -->
-    <button onclick="alert('Você clicou')">click aqui</button>
-    <button id="btn">click é o js roda</button>
-
-    <form action="" id="form">
-        <button type="submit">submit</button>
-    </form>
-
+    <div id="box" style="width: 150px; height: 150px; background-color: aqua;">
+        <h1 id="texto">Exemplo</h1>
+    </div>
     <script>
-        let btn = document.getElementById('btn')
-        btn.onclick = () => {
-            let num = prompt("Digite um número")
-            alert(num)
-        }
-
-        document.getElementById('form').addEventListener("submit", (event) => {
-            event.preventDefault()
-            console.log("Teste");
+        let element = document.getElementById("box")
+        let texto = document.getElementById("texto")
+        let isAprroved = true
+        if (isAprroved){
+        element.addEventListener("mouseover" , () => {
+            element.style.backgroundColor = "red"
+            element.style.height = "300px"
+            element.style.width = "300px"
+            texto.innerText = "Mudei de texto"
         })
-
-
+        
+        element.addEventListener("mouseout" , () => {
+            element.style.backgroundColor = "aqua"
+            element.style.height = "150px"
+            element.style.width = "150px"
+            texto.innerText = "Exemplo"
+        })}
     </script>
 
 </body>
